@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes de Química</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://kit.fontawesome.com/31985e5b5c.js" crossorigin="anonymous"></script>
+    <script>
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            if (info.classList.contains('hidden')) {
+                info.classList.remove('hidden');
+                info.classList.add('animate-slide-down');
+            } else {
+                info.classList.remove('animate-slide-down');
+                info.classList.add('hidden');
+            }
+        }
+    </script>
+    <style>
+        @keyframes slide-down {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-down {
+            animation: slide-down 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-blue-700 p-4 text-white flex justify-between items-center shadow-lg">
+        <div class="flex items-center space-x-3">
+            <img src="img/logo.png" alt="Logo Química" class="h-10">
+            <h1 class="text-2xl font-bold">Química Interactiva</h1>
+        </div>
+        <ul class="flex space-x-6 text-lg">
+            <li><a href="../index.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-house h-6 w-6 -mb-2 -mr-2"></i><span>Inicio</span></a></li>
+            <li><a href="#quizzes" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-list-checks h-6 w-6 -mb-2 -mr-2"></i><span>Quizzes</span></a></li>
+            <li><a href="../temas.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-book h-6 w-6 -mb-2 -mr-2"></i><span>Temas</span></a></li>
+            <li><a href="../contacto.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-envelope h-6 w-6 -mb-2 -mr-2"></i><span>Contacto</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="max-w-4xl mx-auto py-12 px-6">
+        <h1 class="text-3xl font-bold text-center mb-6">Quizzes Disponibles <i
+                class="ph ph-check h-auto w-8 text-green-600"></i></h1>
+
+        <!-- Tema: Estructura Atómica y Teoría Cuántica -->
+        <h2 class="text-2xl font-semibold mt-6 mb-4 flex items-center space-x-4">
+            <i class="ph ph-atom h-8 w-8 text-blue-600 -mb-2 -mr-2"></i>
+            <span>Estructura Atómica y Teoría Cuántica</span>
+        </h2>
+        <ul class="bg-white p-6 rounded-lg shadow-lg divide-y divide-gray-200">
+            <!-- Quizz: Rayos Catódicos y Rayos Anódicos -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info1')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/rayos-catodicos-anodicos.jpeg" alt="Rayos Catódicos y Rayos Anódicos"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Rayos Catódicos y Rayos Anódicos</span>
+                    </div>
+                </div>
+                <div id="info1" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/rayos-catodicos-anodicos.jpeg" alt="Rayos Catódicos y Rayos Anódicos"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Explora los conceptos de rayos catódicos y rayos anódicos, fundamentales en
+                                la física
+                                atómica y la química.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-rayos-catodicos-anodicos.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Radiación del Cuerpo Negro y Teoría de Planck -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info2')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/cuerpo-negro-planck.jpeg" alt="Radiación del Cuerpo Negro y Teoría de Planck"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Radiación del Cuerpo Negro y Teoría de Planck</span>
+                    </div>
+                </div>
+                <div id="info2" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/cuerpo-negro-planck.jpeg"
+                                alt="Radiación del Cuerpo Negro y Teoría de Planck"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Explora los conceptos de radiación del cuerpo negro y la teoría de Planck,
+                                fundamentales
+                                en la física cuántica.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-radiacion-cuerpo-negro-planck.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Teoría Atómica de Bohr-Sommerfeld -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info3')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/teoria-bohr-sommerfeld.jpeg" alt="Teoría Atómica de Bohr-Sommerfeld"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Teoría Atómica de Bohr-Sommerfeld</span>
+                    </div>
+                </div>
+                <div id="info3" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/teoria-bohr-sommerfeld.jpeg" alt="Teoría Atómica de Bohr-Sommerfeld"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Explora los conceptos de la teoría atómica de Bohr-Sommerfeld, una extensión
+                                de la teoría
+                                de Bohr que incorpora conceptos de mecánica cuántica.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-bohr-sommerfeld.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Principio de Dualidad y Postulado de De Broglie -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info16')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/postulado-debroglie.jpeg" alt="Principio de Dualidad y Postulado de De Broglie"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Principio de Dualidad y Postulado de De Broglie</span>
+                    </div>
+                </div>
+                <div id="info16" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/postulado-debroglie.jpeg"
+                                alt="Principio de Dualidad y Postulado de De Broglie"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Explora los conceptos del principio de dualidad y el postulado de De
+                                Broglie, fundamentales en la física cuántica.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-dualidad-de-broglie.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+        <!-- Tema: Clasificación Periódica y Propiedades Atómicas -->
+        <h2 class="text-2xl font-semibold mt-6 mb-4 flex items-center space-x-4">
+            <i class="ph ph-squares-four h-8 w-8 text-blue-600 -mb-2 -mr-2"></i>
+            <span>Clasificación Periódica y Propiedades Atómicas</span>
+        </h2>
+        <ul class="bg-white p-6 rounded-lg shadow-lg divide-y divide-gray-200">
+            <!-- Quizz: Tabla Periódica Larga y Tabla Cuántica -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info4')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/tabla-cuantica.webp" alt="Tabla Periódica Larga y Tabla Cuántica"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Tabla Periódica Larga y Tabla Cuántica</span>
+                    </div>
+                </div>
+                <div id="info4" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/tabla-cuantica.webp" alt="Tabla Periódica Larga y Tabla Cuántica"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Explora la tabla periódica larga y la tabla cuántica, fundamentales para
+                                entender la
+                                clasificación de los elementos.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-tabla-periodica.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Carga Nuclear Efectiva -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info5')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/carga-efectiva.jpg" alt="Carga Nuclear Efectiva"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Carga Nuclear Efectiva</span>
+                    </div>
+                </div>
+                <div id="info5" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/carga-efectiva.jpg" alt="Carga Nuclear Efectiva"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende sobre la carga nuclear efectiva y su importancia en la química.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-carga-nuclear.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Radio Atómico, Radio Covalente y Radio Iónico -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info6')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/radios-covalentes.gif" alt="Radio Atómico, Radio Covalente y Radio Iónico"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Radio Atómico, Radio Covalente y Radio Iónico</span>
+                    </div>
+                </div>
+                <div id="info6" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/radios-covalentes.gif" alt="Radio Atómico, Radio Covalente y Radio Iónico"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende sobre los radios atómico, covalente e iónico y su importancia en la
+                                química.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-radio-atomico.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Número de Oxidación -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info7')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/numero-oxidacion.png" alt="Número de Oxidación"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Número de Oxidación</span>
+                    </div>
+                </div>
+                <div id="info7" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/numero-oxidacion.png" alt="Número de Oxidación"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende sobre el número de oxidación y su importancia en la química.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-numero-oxidacion.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Tema: Enlace Químico -->
+        <h2 class="text-2xl font-semibold mt-6 mb-4 flex items-center space-x-4">
+            <i class="ph ph-plugs-connected h-8 w-8 text-blue-600 -mb-2 -mr-2"></i>
+            <span>Enlace Químico</span>
+        </h2>
+        <ul class="bg-white p-6 rounded-lg shadow-lg divide-y divide-gray-200">
+            <!-- Quizz: Concepto de Enlace Químico -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info8')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/enlace-quimico.png" alt="Concepto de Enlace Químico"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Concepto de Enlace Químico</span>
+                    </div>
+                </div>
+                <div id="info8" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/enlace-quimico.png" alt="Concepto de Enlace Químico"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende sobre el concepto de enlace químico y sus diferentes tipos.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-concepto-enlace.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Teorías del Enlace de Valencia -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info9')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/enlace-valencia.png" alt="Teorías del Enlace de Valencia"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Teorías del Enlace de Valencia</span>
+                    </div>
+                </div>
+                <div id="info9" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/enlace-valencia.png" alt="Teorías del Enlace de Valencia"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Explora las diferentes teorías del enlace de valencia, como la teoría de
+                                Lewis y la teoría
+                                de Molecular Orbital.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-teorias-enlace-valencia.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Hibridación y Geometría Molecular -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info10')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/hibridacion.png" alt="Hibridación y Geometría Molecular"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Hibridación y Geometría Molecular</span>
+                    </div>
+                </div>
+                <div id="info10" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/hibridacion.png" alt="Hibridación y Geometría Molecular"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende sobre la hibridación orbital y las geometrías moleculares en
+                                química.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-hibridacion-geometria.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Formación y Propiedades de los Compuestos Iónicos -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info11')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/compuesto-ionico.png" alt="Formación y Propiedades de los Compuestos Iónicos"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Formación y Propiedades de los Compuestos Iónicos</span>
+                    </div>
+                </div>
+                <div id="info11" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/compuesto-ionico.png"
+                                alt="Formación y Propiedades de los Compuestos Iónicos"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende sobre la formación y propiedades de los compuestos iónicos.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-compuestos-ionicos.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Tema: Reacciones Químicas y Estequiometría -->
+        <h2 class="text-2xl font-semibold mt-6 mb-4 flex items-center space-x-4">
+            <i class="ph ph-test-tube h-8 w-8 text-blue-600 -mb-2 -mr-2"></i>
+            <span>Reacciones Químicas y Estequiometría</span>
+        </h2>
+        <ul class="bg-white p-6 rounded-lg shadow-lg divide-y divide-gray-200">
+            <!-- Quizz: Combinación -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info12')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/combinacion.png" alt="Combinación"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Combinación</span>
+                    </div>
+                </div>
+                <div id="info12" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/combinacion.png" alt="Combinación"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende sobre las reacciones de combinación y cómo se forman nuevos
+                                compuestos.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-combinacion.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Óxido-Reducción -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info13')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/oxido-reduccion.png" alt="Óxido-Reducción"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Óxido-Reducción</span>
+                    </div>
+                </div>
+                <div id="info13" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/oxido-reduccion.png" alt="Óxido-Reducción"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Explora los conceptos de oxidación y reducción en química.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-oxido-reduccion.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Reacción Óxido-Reducción en Electroquímica -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info14')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/electroquimica.png" alt="Reacción Óxido-Reducción en Electroquímica"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Reacción Óxido-Reducción en Electroquímica</span>
+                    </div>
+                </div>
+                <div id="info14" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/electroquimica.png" alt="Reacción Óxido-Reducción en Electroquímica"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende sobre las reacciones de oxidación-reducción en electroquímica y sus
+                                aplicaciones.
+                            </p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-electroquimica.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Quizz: Cálculo de la FEM y Potenciales de Óxido-Reducción -->
+            <li class="py-4 hover:bg-gray-100 rounded-lg transition">
+                <div class="flex justify-between items-center cursor-pointer" onclick="toggleInfo('info15')">
+                    <div class="flex items-center space-x-4">
+                        <img src="../img/FEM-oxido-reduccion.jpg"
+                            alt="Cálculo de la FEM y Potenciales de Óxido-Reducción"
+                            class="h-10 w-auto transition-transform ml-4 rounded-lg">
+                        <span class="text-lg font-medium">Cálculo de la FEM y Potenciales de Óxido-Reducción</span>
+                    </div>
+                </div>
+                <div id="info15" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                        <div class="md:w-1/2 md:flex md:items-center">
+                            <img src="../img/FEM-oxido-reduccion.jpg"
+                                alt="Cálculo de la FEM y Potenciales de Óxido-Reducción"
+                                class="h-40 w-auto mx-auto mb-2 rounded-lg shadow-lg"
+                                style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);">
+                        </div>
+                        <div class="md:w-1/2">
+                            <p class="mb-4">Aprende cómo calcular la fuerza electromotriz (FEM) y los potenciales de
+                                oxidación-reducción en reacciones electroquímicas.</p>
+                            <div class="flex flex-col space-y-2">
+                                <a href="quiz-calculo-fem.html" target="_blank"
+                                    class="flex items-center space-x-2 bg-indigo-600 text-white text-center py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
+                                    <i class="ph ph-check h-5 w-5 -mb-1"></i>
+                                    <span>Comenzar Quiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="bg-blue-700 text-white text-center p-4 mt-12 shadow-inner">
+        <p>&copy; 2025 Química Interactiva | Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

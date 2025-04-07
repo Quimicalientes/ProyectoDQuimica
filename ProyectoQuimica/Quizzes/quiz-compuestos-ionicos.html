@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Química</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://kit.fontawesome.com/31985e5b5c.js" crossorigin="anonymous"></script>
+    <style>
+        .respuesta {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .feedback {
+            transition: opacity 0.5s ease;
+        }
+
+        .container-pregunta {
+            transition: opacity 0.5s ease;
+        }
+
+        .resultados-container {
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-blue-700 p-4 text-white flex justify-between items-center shadow-lg">
+        <div class="flex items-center space-x-3">
+            <img src="img/logo.png" alt="Logo Química" class="h-10">
+            <h1 class="text-2xl font-bold">Química Interactiva</h1>
+        </div>
+        <ul class="flex space-x-6 text-lg">
+            <li><a href="../index.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-house h-6 w-6 -mr-2 -mb-2"></i><span>Inicio</span></a></li>
+            <li><a href="quizzes.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-list-checks h-6 w-6 -mr-2 -mb-2"></i><span>Quizzes</span></a></li>
+            <li><a href="../temas.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-book h-6 w-6 -mr-2 -mb-2"></i><span>Temas</span></a></li>
+            <li><a href="../contacto.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-envelope h-6 w-6 -mr-2 -mb-2"></i><span>Contacto</span></a></li>
+        </ul>
+    </nav>
+    <main class="max-w-4xl mx-auto py-12 px-6">
+        <!-- Titulo del Quizz-->
+        <section aria-labelledby="quiz-title">
+            <h1 id="quiz-title" class="text-3xl font-bold text-center mb-6">Formación y propiedades de los compuestos
+                iónicos</h1>
+            <!-- Contenedor principal para pregunta e imágenes -->
+            <div id="container-pregunta" class="container-pregunta bg-white p-6 rounded-lg shadow-md">
+                <!-- Pregunta -->
+                <article aria-labelledby="question-title">
+                    <h2 id="question-title" class="text-xl font-semibold mb-4 hidden" aria-live="polite"></h2>
+                    <!-- Contenedor para centrar la imagen -->
+                    <div class="flex justify-center mb-4">
+                        <img id="imagenPregunta" src="" alt=""
+                            class="max-w-full max-h-80 object-contain rounded-lg hidden">
+                    </div>
+                    <!-- Opciones de respuesta -->
+                    <div id="opciones" class="space-y-4">
+                        <!-- Las opciones se generarán dinámicamente aquí -->
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Resultados -->
+        <section id="resultados" class="hidden resultados-container bg-white p-6 rounded-lg shadow-lg text-center">
+            <h2 class="text-2xl font-semibold mb-4">Resultados del Quiz <i class="fa-solid fa-square-poll-vertical"></i>
+            </h2>
+            <p id="puntaje" class="text-lg mb-4"></p>
+            <div class="flex justify-center space-x-4">
+                <a id="estudiarTema" href=""
+                    class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"><i
+                        class="fa-solid fa-book-open"></i> Estudiar
+                    tema</a>
+                <button onclick="reintentarQuizz()"
+                    class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"><i
+                        class="fa-solid fa-rotate-left"></i> Reintentar
+                    Quizz</button>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-blue-700 text-white text-center p-4 mt-12 shadow-inner">
+        <p>&copy; 2025 Química Interactiva | Todos los derechos reservados</p>
+    </footer>
+    <script>
+        const preguntas = [
+            {
+                pregunta: "¿Qué ocurre cuando un átomo de flúor reacciona con un átomo de sodio?",
+                imagen: "img/compuestos-ionicos1.png", // Ruta de la imagen relacionada con la pregunta (dejar vacío si no hay imagen)
+                opciones: ["Ambos pierden electrones para estabilizarse.", "El flúor gana un electrón y el sodio lo pierde, formando iones con carga opuesta.", "El flúor pierde un electrón y el sodio lo gana.", "Ambos átomos comparten electrones para formar un enlace covalente."],
+                respuestaCorrecta: 1
+            },
+            {
+                pregunta: "¿Cómo se define un enlace iónico o electrovalente?",
+                imagen: "img/compuestos-ionicos2.png", // Ruta de la imagen relacionada con la pregunta (dejar vacío si no hay imagen)
+                opciones: ["Es un enlace que se forma por el apareamiento de electrones desapareados.", "Es un enlace en el que los electrones se comparten entre átomos.", "Es un enlace que se establece por la transferencia de electrones para alcanzar la configuración de gas noble.", "Es un enlace que se da solo entre átomos de gases nobles."],
+                respuestaCorrecta: 2
+            },
+            {
+                pregunta: "¿Cuál de las siguientes afirmaciones sobre elementos electronegativos y electropositivos es correcta?",
+                imagen: "img/compuestos-ionicos3.gif", // Ruta de la imagen relacionada con la pregunta (dejar vacío si no hay imagen)
+                opciones: ["Los elementos electropositivos ganan electrones para estabilizarse.", "Los elementos electronegativos son metales y pierden electrones fácilmente.", "Los elementos electronegativos tienden a ganar electrones y formar aniones.", "Los elementos electropositivos tienden a compartir electrones para formar enlaces."],
+                respuestaCorrecta: 2
+            }
+        ];
+        let indicePregunta = 0;
+        let puntaje = 0;
+        function mostrarPregunta() {
+            const pregunta = preguntas[indicePregunta];
+            document.getElementById('question-title').textContent = pregunta.pregunta;
+            document.getElementById('question-title').classList.remove('hidden');
+            const imagen = document.getElementById('imagenPregunta');
+            imagen.src = pregunta.imagen;
+            imagen.alt = `Imagen para la pregunta: ${pregunta.pregunta}`;
+            if (pregunta.imagen) {
+                imagen.classList.remove('hidden');
+            } else {
+                imagen.classList.add('hidden');
+            }
+            const opciones = document.getElementById('opciones');
+            opciones.innerHTML = '';
+            pregunta.opciones.forEach((opcion, index) => {
+                const boton = document.createElement('button');
+                boton.textContent = opcion;
+                boton.classList.add('w-full', 'p-4', 'text-left', 'bg-gray-100', 'rounded-lg', 'hover:bg-gray-200', 'transition', 'respuesta', 'focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500', 'hover:scale-105');
+                boton.setAttribute('data-indice', index);
+                boton.addEventListener('click', () => verificarRespuesta(index));
+                opciones.appendChild(boton);
+            });
+        }
+        function verificarRespuesta(indiceSeleccionado) {
+            const pregunta = preguntas[indicePregunta];
+            const botones = document.querySelectorAll('.respuesta');
+            if (indiceSeleccionado === pregunta.respuestaCorrecta) {
+                botones[indiceSeleccionado].style.backgroundColor = 'green';
+                puntaje++;
+                mostrarFeedback("Correcto!", "text-green-600");
+            } else {
+                botones[indiceSeleccionado].style.backgroundColor = 'red';
+                mostrarFeedback("Incorrecto!", "text-red-600");
+            }
+            setTimeout(() => {
+                botones[indiceSeleccionado].style.backgroundColor = '';
+                indicePregunta++;
+                if (indicePregunta < preguntas.length) {
+                    mostrarPregunta();
+                } else {
+                    mostrarResultados();
+                }
+            }, 500);
+        }
+        function mostrarFeedback(mensaje, clase) {
+            const feedback = document.createElement('p');
+            feedback.textContent = mensaje;
+            feedback.classList.add(clase, 'mt-4', 'feedback');
+            document.getElementById('opciones').appendChild(feedback);
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+                setTimeout(() => {
+                    feedback.remove();
+                }, 500);
+            }, 1500);
+        }
+        function mostrarResultados() {
+            const containerPregunta = document.getElementById('container-pregunta');
+            containerPregunta.style.opacity = '0';
+            setTimeout(() => {
+                containerPregunta.classList.add('hidden');
+                document.getElementById('question-title').classList.add('hidden');
+                document.getElementById('opciones').classList.add('hidden');
+                document.getElementById('imagenPregunta').classList.add('hidden');
+                const contenedorResultados = document.getElementById('resultados');
+                const puntajeElemento = document.getElementById('puntaje');
+                puntajeElemento.textContent = `Obtuviste ${puntaje} de ${preguntas.length} respuestas correctas.`;
+                // Configurar enlace para "Estudiar tema"
+                const enlaceEstudiar = document.getElementById('estudiarTema');
+                enlaceEstudiar.href = '../temas.html'; // Reemplaza con la URL correspondiente
+                contenedorResultados.classList.remove('hidden');
+                contenedorResultados.style.opacity = '0';
+                setTimeout(() => {
+                    contenedorResultados.style.opacity = '1';
+                }, 100);
+            }, 500);
+        }
+        function reintentarQuizz() {
+            indicePregunta = 0;
+            puntaje = 0;
+            document.getElementById('resultados').classList.add('hidden');
+            document.getElementById('question-title').classList.remove('hidden');
+            document.getElementById('opciones').classList.remove('hidden');
+            document.getElementById('imagenPregunta').classList.remove('hidden');
+            const containerPregunta = document.getElementById('container-pregunta');
+            containerPregunta.classList.remove('hidden');
+            containerPregunta.style.opacity = '1';
+            mostrarPregunta();
+        }
+        window.onload = mostrarPregunta;
+    </script>
+</body>
+
+</html>

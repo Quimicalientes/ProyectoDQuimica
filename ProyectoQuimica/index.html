@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://kit.fontawesome.com/31985e5b5c.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-blue-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-blue-700 p-4 text-white flex justify-between items-center shadow-lg">
+        <div class="flex items-center space-x-3">
+            <img src="img/logo.png" alt="Logo Química" class="h-10">
+            <h1 class="text-2xl font-bold">Química Interactiva</h1>
+        </div>
+        <ul class="flex space-x-6 text-lg">
+            <li><a href="#" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-house h-6 w-6 -mb-2 -mr-2"></i><span>Inicio</span></a></li>
+            <li><a href="Quizzes/quizzes.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-list-checks h-6 w-6 -mb-2 -mr-2"></i><span>Quizzes</span></a></li>
+            <li><a href="temas.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-book h-6 w-6 -mb-2 -mr-2"></i><span>Temas</span></a></li>
+            <li><a href="contacto.html" class="flex items-center space-x-2 hover:text-yellow-300 transition"><i
+                        class="ph ph-envelope h-6 w-6 -mb-2 -mr-2"></i><span>Contacto</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="text-center py-20 bg-blue-500 text-white">
+        <h2 class="text-4xl font-bold">Explora la Química con Quizzes Interactivos</h2>
+        <p class="mt-4 text-lg">Aprende de forma dinámica y desafiante.</p>
+        <a href="Quizzes/quizzes.html"
+            class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-200 transition">¡Empezar
+            ahora!</a>
+    </header>
+
+    <!-- Sección de Temas -->
+    <section id="temas" class="py-12 px-6">
+        <h3 class="text-2xl font-bold text-center mb-6">Secciones</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="quizzes.html"
+                class="bg-white p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition block">
+                <img src="https://lh5.googleusercontent.com/proxy/nEGNp5EgIVqBL3qROq6CHQpOCaTdV7c_mkKDVYWSnZw1SQlgZwW75AG2g-OEhbqKFrqfUv4yNS8BTjjt_N9yu_vlNi-Jaqa186iPywPOAnIJ2umUjvkTiSfJdbkIB1YFTWewzAk"
+                    alt="Átomos y Elementos" class="mx-auto h-20 mb-3 rounded-lg">
+                <h4 class="text-lg font-bold">Quizzes</h4>
+                <p class="mt-2">Escoge el quizz que se adapte a tus conocimientos actuales.</p>
+            </a>
+            <a href="temas.html" class="bg-white p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition block">
+                <img src="https://study.com/cimages/multimages/16/adobestock_85925010.jpeg" alt="Temas"
+                    class="mx-auto h-20 mb-3 rounded-lg">
+                <h4 class="text-lg font-bold">Temas</h4>
+                <p class="mt-2">Estudia los temas necesarios con nuestra ayuda.</p>
+            </a>
+            <a href="contacto.html"
+                class="bg-white p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition block">
+                <img src="https://availagility.co.uk/wp-content/uploads/2023/10/35568871582_ce1ea9b317_o-300x200.jpg"
+                    alt="Contacto" class="mx-auto h-20 mb-3 rounded-lg">
+                <h4 class="text-lg font-bold">Contactanos</h4>
+                <p class="mt-2">Conoce mejor a todo el equipo que nos comforma.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-700 text-white text-center p-4 mt-12 shadow-inner">
+        <p>&copy; 2025 Química Interactiva | Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>
